@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gatos normales | Battle Cats</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="detail-page">
+    <div class="page">
+      <aside class="sidebar">
+        <h2>Categoria</h2>
+        <ul>
+          <li><a href="fases-y-funciones.html">fases y funciones</a></li>
+          <li><a href="estadisticas-de-gatos.html">estadisticas de gatos</a></li>
+          <li><a href="index.html">Volver al inicio</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+        <section class="intro normal-cats-page">
+          <h2>Gatos normales</h2>
+          <p>Selecciona un gato para consultar sus datos.</p>
+
+          <div id="normal-cats-grid" class="normal-cats-grid" aria-label="Gatos normales"></div>
+
+          <div class="cat-viewer">
+            <aside class="level-control" aria-label="Control de nivel">
+              <label for="cat-level">Nivel</label>
+              <input id="cat-level" type="number" min="1" max="110" value="1" />
+              <input id="cat-level-range" type="range" min="1" max="110" value="1" />
+              <p>Nivel 1 a 110</p>
+              <p>Tesoros: nivel 1</p>
+            </aside>
+
+            <article id="cat-details" class="cat-details" aria-live="polite">
+              <div class="cat-details-image-wrap">
+                <img id="cat-image" src="" alt="" />
+              </div>
+              <div class="cat-details-content">
+                <h3 id="cat-name"></h3>
+                <p id="cat-description"></p>
+                <table class="cat-stats">
+                  <caption>Estadisticas</caption>
+                  <tbody>
+                    <tr><th scope="row">Tipo</th><td id="cat-type"></td></tr>
+                    <tr><th scope="row">Nivel</th><td id="cat-level-value"></td></tr>
+                    <tr><th scope="row">Vida</th><td id="cat-health"></td></tr>
+                    <tr><th scope="row">Ataque</th><td id="cat-attack"></td></tr>
+                    <tr><th scope="row">Costo</th><td id="cat-cost"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
+          <p><a href="index.html">Volver al inicio</a></p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
