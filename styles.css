@@ -13,26 +13,26 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  height: 100%;
+  height: auto;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
 }
 
 body {
-  background-image: url("imagenes/background.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-attachment: scroll;
-}
-
-.detail-page {
-  background-image: url("imagenes/background02.png");
+  background: #fff;
 }
 
 .page {
   min-height: 100vh;
   display: flex;
+  background-image: url("imagenes/background.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.detail-page .page {
+  background-image: url("imagenes/background02.png");
 }
 
 .sidebar {
@@ -177,12 +177,84 @@ body {
   width: min(980px, 100%);
 }
 
+.special-cats-page {
+  width: min(1100px, 100%);
+}
+
 .normal-cats-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(6, minmax(90px, 1fr));
   gap: 18px;
   margin: 34px 0 28px;
+}
+
+.special-cats-navigation {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  gap: 10px;
+  align-items: center;
+}
+
+.special-cats-navigation .normal-cats-grid {
+  margin: 34px 0 28px;
+}
+
+.page-arrow {
+  width: 42px;
+  height: 72px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.page-arrow[hidden] {
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-arrow-left {
+  background-image: url("imagenes/IU/Flechas%20izquierda%20idle.png");
+}
+
+.page-arrow-right {
+  background-image: url("imagenes/IU/Flecha%20derecha%20idle.png");
+}
+
+.page-arrow-left:hover,
+.page-arrow-left:focus-visible {
+  animation: left-arrow-blink 200ms steps(1, end) infinite;
+}
+
+.page-arrow-right:hover,
+.page-arrow-right:focus-visible {
+  animation: right-arrow-blink 200ms steps(1, end) infinite;
+}
+
+@keyframes left-arrow-blink {
+  0%, 49% {
+    background-image: url("imagenes/IU/Flecha%20izquierda%20activa%20amarilla.png");
+  }
+
+  50%, 100% {
+    background-image: url("imagenes/IU/Flecha%20izquierda%20activa%20morada_.png");
+  }
+}
+
+@keyframes right-arrow-blink {
+  0%, 49% {
+    background-image: url("imagenes/IU/Flecha%20derecha%20activa%20amarilla_.png");
+  }
+
+  50%, 100% {
+    background-image: url("imagenes/IU/Flecha%20derecha%20activa%20morada.png");
+  }
 }
 
 .normal-cat-card {
@@ -207,8 +279,8 @@ body {
 
 .normal-cat-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border: 4px solid #000;
   display: block;
   transition: transform 160ms ease, box-shadow 160ms ease;
@@ -284,8 +356,8 @@ body {
 
 .cat-details-image-wrap img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -326,6 +398,16 @@ body {
 }
 
 @media (max-width: 760px) {
+  .special-cats-navigation {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 4px;
+  }
+
+  .page-arrow {
+    width: 30px;
+    height: 58px;
+  }
+
   .normal-cats-grid {
     grid-template-columns: repeat(3, minmax(80px, 1fr));
   }

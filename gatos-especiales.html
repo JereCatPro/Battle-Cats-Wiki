@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gatos especiales | Battle Cats</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="special-script.js" defer></script>
   </head>
   <body class="detail-page">
     <div class="page">
@@ -17,9 +18,46 @@
         </ul>
       </aside>
       <main class="content">
-        <section class="intro">
+        <section class="intro special-cats-page">
           <h2>Gatos especiales</h2>
-          <p>Aquí puedes agregar las estadisticas de los gatos especiales.</p>
+          <p>Selecciona un gato para consultar sus datos.</p>
+
+          <div class="special-cats-navigation">
+            <button id="special-previous" class="page-arrow page-arrow-left" type="button" aria-label="Pagina anterior"></button>
+            <div id="special-cats-grid" class="normal-cats-grid" aria-label="Gatos especiales"></div>
+            <button id="special-next" class="page-arrow page-arrow-right" type="button" aria-label="Pagina siguiente"></button>
+          </div>
+
+          <div class="cat-viewer">
+            <aside class="level-control" aria-label="Control de nivel">
+              <label for="special-cat-level">Nivel</label>
+              <input id="special-cat-level" type="number" min="1" max="110" value="1" />
+              <input id="special-cat-level-range" type="range" min="1" max="110" value="1" />
+              <p>Nivel 1 a 110</p>
+              <p>Tesoros: nivel 1</p>
+            </aside>
+
+            <article id="special-cat-details" class="cat-details" aria-live="polite">
+              <div class="cat-details-image-wrap">
+                <img id="special-cat-image" src="" alt="" />
+              </div>
+              <div class="cat-details-content">
+                <h3 id="special-cat-name"></h3>
+                <p id="special-cat-description"></p>
+                <table class="cat-stats">
+                  <caption>Estadisticas</caption>
+                  <tbody>
+                    <tr><th scope="row">Tipo</th><td id="special-cat-type"></td></tr>
+                    <tr><th scope="row">Nivel</th><td id="special-cat-level-value"></td></tr>
+                    <tr><th scope="row">Vida</th><td id="special-cat-health"></td></tr>
+                    <tr><th scope="row">Ataque</th><td id="special-cat-attack"></td></tr>
+                    <tr><th scope="row">Costo</th><td id="special-cat-cost"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+
           <p><a href="index.html">Volver al inicio</a></p>
         </section>
       </main>
